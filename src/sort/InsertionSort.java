@@ -18,9 +18,9 @@ public class InsertionSort {
         int[] dataSize = {10000, 100000};
         for (int n : dataSize) {
 //            System.out.println("Random Array : ");
-//            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
-//            Integer[] arr2 = Arrays.copyOf(arr, arr.length);
-//            SortingHelper.sortTest("InsertionSort", InsertionSort::sort2, arr);
+            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+            Integer[] arr2 = Arrays.copyOf(arr, arr.length);
+            SortingHelper.sortTest("InsertionSort", InsertionSort::sort, arr);
 //            SortingHelper.sortTest("SelectionSort", SelectionSort::sort, arr2);
 //
 //            System.out.println();
@@ -30,8 +30,8 @@ public class InsertionSort {
 //            arr2 = Arrays.copyOf(arr, arr.length);
 //            SortingHelper.sortTest("InsertionSort", InsertionSort::sort2, arr);
 //            SortingHelper.sortTest("SelectionSort", SelectionSort::sort, arr2);
-            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
-            SortingHelper.sortTest("InsertionSort3", InsertionSort::sort3, arr);
+//            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
+            SortingHelper.sortTest("InsertionSort2", InsertionSort::sort2, arr2);
 
         }
     }
@@ -68,11 +68,12 @@ public class InsertionSort {
      */
     public static <E extends Comparable<E>> void sort2(E[] arr) {
         for (int i = 0; i < arr.length; i++) {
+            E t = arr[i];
             int j;
-            for (j = i; j > 0 && arr[i].compareTo(arr[j - 1]) < 0; j--) {
+            for (j = i; j > 0 && t.compareTo(arr[j - 1]) < 0; j--) {
                 arr[j] = arr[j - 1];
             }
-            arr[j] = arr[i];
+            arr[j] = t;
         }
     }
 
@@ -83,11 +84,12 @@ public class InsertionSort {
      */
     public static <E extends Comparable<E>> void sort3(E[] arr) {
         for (int i = arr.length - 1; i >= 0; i--) {
+            E t = arr[i];
             int j;
-            for (j = i; j < arr.length - 1 && arr[i].compareTo(arr[j + 1]) > 0; j++) {
+            for (j = i; j < arr.length - 1 && t.compareTo(arr[j + 1]) > 0; j++) {
                 arr[j] = arr[j + 1];
             }
-            arr[j] = arr[i];
+            arr[j] = t;
         }
     }
 

@@ -1,5 +1,9 @@
 package pojo;
 
+import array.Array;
+
+import java.util.Stack;
+
 /**
  * @author roy f
  */
@@ -44,5 +48,14 @@ public class Student implements Comparable<Student>{
     @Override
     public String toString() {
         return String.format("Student(name: %s, score: %d)", this.name, this.score);
+    }
+
+    public static void main(String[] args) {
+        Array<Student> arr = new Array<>();
+        arr.addLast(new Student("Alice", 100));
+        arr.addLast(new Student("Bob", 66));
+        arr.addLast(new Student("Charlie", 88));
+        System.out.println(arr);
+
     }
 }

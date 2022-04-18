@@ -1,5 +1,9 @@
 package queue;
 
+
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
 /**
  * @author roy f
  */
@@ -36,8 +40,8 @@ public class QueueSample {
     private static void deque() {
         // 在下面的双端队列的测试中，偶数从队尾加入；奇数从队首加入
         Deque<Integer> dq = new Deque<>();
-        for(int i = 0 ; i < 16 ; i ++){
-            if(i % 2 == 0) {
+        for (int i = 0; i < 16; i++) {
+            if (i % 2 == 0) {
                 dq.addLast(i);
             } else {
                 dq.addFront(i);
@@ -47,8 +51,8 @@ public class QueueSample {
 
         // 之后，我们依次从队首和队尾轮流删除元素
         System.out.println();
-        for(int i = 0; !dq.isEmpty(); i ++){
-            if(i % 2 == 0) {
+        for (int i = 0; !dq.isEmpty(); i++) {
+            if (i % 2 == 0) {
                 dq.removeFront();
             } else {
                 dq.removeLast();

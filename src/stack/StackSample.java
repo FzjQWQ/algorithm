@@ -9,13 +9,15 @@ import java.util.Map;
  */
 public class StackSample {
     public static void main(String[] args) {
-        final ArrayStack<Integer> arrayStack = new ArrayStack<>();
-        for (int i = 0; i < 5; i++) {
-            arrayStack.push(i);
-            System.out.println(arrayStack);
-        }
-        arrayStack.pop();
-        System.out.println(arrayStack);
+//        final ArrayStack<Integer> arrayStack = new ArrayStack<>();
+//        for (int i = 0; i < 5; i++) {
+//            arrayStack.push(i);
+//            System.out.println(arrayStack);
+//        }
+//        arrayStack.pop();
+//        System.out.println(arrayStack);
+        final Solution solution = new Solution();
+        System.out.println(solution.isValid("(n)ihcjf"));
     }
 
 }

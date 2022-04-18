@@ -9,7 +9,7 @@ import java.util.Stack;
 public class Solution {
     public boolean isValid(String s) {
         final Stack<Character> stack = new Stack<>();
-        for (char c :s.toCharArray()) {
+        for (char c : s.toCharArray()) {
             if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
             } else {

@@ -40,6 +40,8 @@ public class LoopQueue<E> implements Queue<E> {
 
     @Override
     public int getSize() {
+        // 如果不使用size记录元素个数，直接使用front和tail计算出元素数量：
+        // capacity - (tail - front)
         return size;
     }
 

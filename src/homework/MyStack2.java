@@ -8,19 +8,23 @@ import java.util.Queue;
  *
  * @author roy f
  */
-class MyStack {
+class MyStack2 {
 
     private Queue<Integer> q;
 
-    private int top;
-
-    public MyStack() {
+    public MyStack2() {
         q = new LinkedList<>();
     }
 
     public void push(int x) {
-        q.add(x);
-        top = x;
+        Queue<Integer> q2 = new LinkedList<>();
+        // 在队列头部插入数据后再插入老数据
+        q2.add(x);
+        while(!q.isEmpty()) {
+            q2.add(q.remove());
+        }
+        q = q2;
+
     }
 
     /**
@@ -29,14 +33,7 @@ class MyStack {
      * @return
      */
     public int pop() {
-        Queue<Integer> temp = new LinkedList<>();
-        while (q.size() > 1) {
-            top = q.peek();
-            temp.add(q.remove());
-        }
-        int result = q.remove();
-        q = temp;
-        return result;
+        return q.remove();
     }
 
     /**
@@ -45,9 +42,7 @@ class MyStack {
      * @return
      */
     public int top() {
-        //使用top变量维护top
-        //如果不使用top变量则调用pop后将结果重新push进队列
-        return top;
+        return q.peek();
     }
 
     public boolean empty() {
@@ -55,3 +50,11 @@ class MyStack {
     }
 }
 
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack obj = new MyStack();
+ * obj.push(x);
+ * int param_2 = obj.pop();
+ * int param_3 = obj.top();
+ * boolean param_4 = obj.empty();
+ */

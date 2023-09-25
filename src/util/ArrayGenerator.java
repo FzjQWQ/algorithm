@@ -1,8 +1,6 @@
 package util;
 
-import java.util.ArrayList;
 import java.util.Random;
-import java.util.regex.Matcher;
 
 /**
  * 数组生成器
@@ -26,8 +24,18 @@ public class ArrayGenerator {
      * @param bound 随机数最大值
      * @return 数组
      */
-    public static Integer[] generateRandomArray(int n,int bound) {
+    public static Integer[] generateRandomIntegerArray(int n, int bound) {
         final Integer[] arr = new Integer[n];
+        Random rnd = new Random();
+        for (int i = 0; i < n; i++) {
+            arr[i] = rnd.nextInt(bound);
+        }
+        return arr;
+
+    }
+
+    public static int[] generateRandomIntArray(int n,int bound) {
+        final int[] arr = new int[n];
         Random rnd = new Random();
         for (int i = 0; i < n; i++) {
             arr[i] = rnd.nextInt(bound);

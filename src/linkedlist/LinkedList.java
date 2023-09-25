@@ -179,6 +179,7 @@ public class LinkedList<E> implements Iterable<E> {
     public String toString() {
         StringBuilder res = new StringBuilder();
         Node cur = dummyHead.next;
+        // while等价于for(Node cur = dummyHead.next; cur != null; cur = cur.next)
         while (cur != null) {
             res.append(cur).append("->");
             cur = cur.next;
@@ -200,12 +201,12 @@ public class LinkedList<E> implements Iterable<E> {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<E> iterator() {
         return null;
     }
 
     @Override
-    public Spliterator spliterator() {
+    public Spliterator<E> spliterator() {
         return Iterable.super.spliterator();
     }
 

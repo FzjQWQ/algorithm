@@ -18,7 +18,7 @@ public class InsertionSort {
         int[] dataSize = {10000, 100000};
         for (int n : dataSize) {
 //            System.out.println("Random Array : ");
-            Integer[] arr = ArrayGenerator.generateRandomIntegerArray(n, n);
+            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
             Integer[] arr2 = Arrays.copyOf(arr, arr.length);
             SortingHelper.sortTest("InsertionSort", InsertionSort::sort, arr);
 //            SortingHelper.sortTest("SelectionSort", SelectionSort::sort, arr2);

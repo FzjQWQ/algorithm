@@ -20,7 +20,7 @@ public class CustomMergeSort {
 //        }
 //        final boolean success = SortingHelper.isSorted(sorted);
 //        System.out.println(success);
-        SortingHelper.sortResTest("CustomMergeSort", CustomMergeSort::sort, ArrayGenerator.generateRandomIntegerArray(10000, 100000));
+        SortingHelper.sortResTest("CustomMergeSort", CustomMergeSort::sort, ArrayGenerator.generateRandomArray(10000, 100000));
 
     }
 

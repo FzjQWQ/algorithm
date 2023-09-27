@@ -17,7 +17,7 @@ public class SelectionSort {
     public static void main(String[] args) {
         int[] dataSize = {10000, 100000};
         for (int n : dataSize) {
-            Integer[] arr = ArrayGenerator.generateRandomIntegerArray(n, n);
+            Integer[] arr = ArrayGenerator.generateRandomArray(n, n);
             SortingHelper.sortTest("SelectionSort", SelectionSort::sort2, arr);
         }
 

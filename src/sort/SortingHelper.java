@@ -25,21 +25,21 @@ public class SortingHelper {
         final long startTime = System.nanoTime();
         consumer.accept(arr);
         final long endTime = System.nanoTime();
-        if (!SortingHelper.isSorted(arr)) {
-            throw new RuntimeException(sortName + " failed");
-        }
-        double time = (endTime - startTime) / 1000000000.0;
-        System.out.printf("%s , n = %d : %f s%n", sortName, arr.length, time);
+        processingTime(SortingHelper.isSorted(arr), sortName, endTime, startTime, arr.length);
     }
 
     public static <T extends Comparable<T>> void sortResTest(String sortName, Function<T[],T[]> function, T[] arr) {
         final long startTime = System.nanoTime();
         final T[] res = function.apply(arr);
         final long endTime = System.nanoTime();
-        if (!SortingHelper.isSorted(res)) {
+        processingTime(SortingHelper.isSorted(res), sortName, endTime, startTime, arr.length);
+    }
+
+    private static <T extends Comparable<T>> void processingTime(boolean isOrderly, String sortName, long endTime, long startTime, int arr) {
+        if (!isOrderly) {
             throw new RuntimeException(sortName + " failed");
         }
         double time = (endTime - startTime) / 1000000000.0;
-        System.out.printf("%s , n = %d : %f s%n", sortName, arr.length, time);
+        System.out.printf("%s , n = %d : %f s%n", sortName, arr, time);
     }
 }
